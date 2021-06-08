@@ -10,8 +10,10 @@ exports.calculate = function(req, res) {
     res.json({ error: err.message });
   });
 
+  
   var operations = {
-    'add':      function(a,b) { return a + b },
+    //Using + opertaor to type cast variabels as integer in order to prevent string concatenation
+    'add':      function(a,b) { return +a + +b },
     'subtract': function(a,b) { return a - b },
     'multiply': function(a,b) { return a * b },
     'divide':   function(a,b) { return a / b },
